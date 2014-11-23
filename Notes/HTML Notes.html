@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>HTML NOTES</title>
+	
+	<style type="text/css">
+		h3 {color:blue;
+			font-family:arial;}
+		table,th,td {border:1px solid black;
+			border-collapse:collapse;
+			padding:5px;
+			text-align:center;
+			border-spacing:5px;}
+		<!--border-collapse is to collapse into one border
+			padding specifies the space between the cell content and its borders
+			text-align
+			border-spacing specifies how thickness the borders are
+			M:- The priority of border-collapse is over border-spacing
+				You can use th in the first column, so you will have vertical headings-->
+		thead {color:black;}
+		tbody {color:black;}
+		tfoot {color:blue;}
+		li {font-family: calibri;}
+	</style>
+	<meta http-equiv="refresh" content="60">
+	<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+	<!--the charset attribute specifies the character encoding for the HTML document-->
+	<!--content-type specifies the character encoding for the document-->
+	<!--content gives the value associated with the http-equiv and name attribute-->
+	
+</head>
+
+<body>
+<h1><a id="home">HTML NOTES</a></h1>
+<nav>
+<a href="HEAD">HEAD</a>
+<a href="#PAPARAGRAPHS_AND_FORMATS">PAPARAGRAPHS AND FORMATS</a>|
+<a href="#LINKS">LINKS</a>|
+<a href="#IMAGES">IMAGES</a>|
+<a href="#TABLES">TABLES</a>|
+<a href="#LISTS">LISTS</a>|
+<a href="#BLOCKS">BLOCKS</a>|
+<a href="#FORMS_AND_INPUTS">FORMS AND INPUTS</a>|
+<a href="#IFRAMES">IFRAMES</a>|
+<a href="#canvas">CANVAS</a>
+<hr/>
+<a href="CSS Notes.html">CSS NOTES</a>
+</nav>
+<hr/>
+
+
+<h3><a id="HEAD">HEAD</a></h3>
+<p>You can construct your website style and global web setting in the head</p>
+<ul>
+	<li>[title]~> defines the title in the browser toolbar</li>
+	<li>[base]~> specifies the URL/target or storage you want to refer to if there is image</li>
+	<li>[link]~> used to link file to this page<br/>
+		~> <i>rel</i> specify the relationship between the current document and the linked document, e.g. rel="stylesheet"<br/>
+		~> <i>type</i> specify the type of the linked document, e.g. type="text/css"
+	</li>
+	<li>[style]~> defines the style information for the HTML</li>
+	<li>[meta]~> provides data about the HTML, can also used to refresh</li>
+	<li>e.g. meta http-equiv="refresh" content="30"</li>
+	<li>[scritp]~> define a client-side script</li>
+</ul>
+<a href="home">Back to home</a>
+<hr>
+
+
+<h3><a id="PAPARAGRAPHS_AND_FORMATS">PARAGRAPHS AND FORMATS</a></h3>
+<ul>
+	<li>[p]~> used to indicate that it is another paragraph.</li>
+	<li>[hr/]~> for horizontal line</li>
+	<li>[br/]~> for line break</li>
+	<li>[b]~> for bold text</li>
+	<li>[i]~> for italic text</li>
+	<li>[sub] for subscripted text</li>
+	<li>[sup] for superscripted text</li>
+	<li>[pre] preserves the original style in spacing, good for displaying computer code</li>
+	<li>[code] displays as computer code, often used to programming code.</li>
+	<li>[abbr] for abbreviation with [title=""]</li>
+	<li>[q] means quotation</li>
+	<li>[del] for strikethrough the text</li>
+	<li>[ins] for underline the text</li>
+	<li>[mark] for highlight the text</li>
+	<li>[!--]~> for comments</li>
+	<br/>
+	<li><b>To display &lt or &gt </b></li>
+	<li>you have to type lt and gt with & in front of them</li>
+	<br/>
+	<li><b>class</b></li>
+	<li>Syntax: [element class="classname"] </li>
+	<li>this attribute specifies one or more classmates for an element</li>
+	<li>to specify more than one classname, you have to separate them with a space</li>
+</ul>
+<a href=#home>Back to home</a>
+<hr/>
+
+
+<h3><a id="LINK">LINKS</a></h3>
+<p><b>Syntax: [a href="URL"]Text[/a]</b></p>
+<ul>
+	<li>with id="" for anchor in the website which can be referred later</li>
+	<li>with title="" for pop-up when you move the mouse on it</li>
+	<li>if you want to go to previous anchor, then use href="#id"</li>
+	<li>you can also refer to the page in the same folder</li>
+	<a href="second.html">This will lead you to the second page.</a>
+	<li>if you link to email, then use mailto:xxx@gmail.com in href</li>
+	<li>you can use 2 attributes, at least one space bewtween them</li>
+</ul>
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="IMAGES">IMAGES</a></h3>
+<p>Syntax: [img src="url" alt="some_text"]</p>
+<img src="http://fin6.com/wp-content/uploads/2013/12/46ff3b93d92b21216d20dfe15668f5754.jpg" height="150">
+<img src="luffy.png" height="150"/>
+<ul>
+	<li>[img]~> for image</li>
+	<li>with src="url" the source of your image</li>
+	<li>with alt="some_text" to display text if the image cannot be displayed</li>
+	<li>with height="number"</li>
+	<li>with style="float:left" to float the image to left of the text</li>
+	<li>with usemap="#map_name" to use the image as map later on</li>
+	
+	<br/>
+	<li>[map]~> defines an image-map</li>
+	<li>Syntax: [map name=""] which is previous defined in the img</li>
+	<li>[area]~> defines a clickable area inside an image-map</li>
+	
+</ul>
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="TABLES">TABLES</a></h3>
+<p>Syntax: [table style="width:number_px"]</p>
+<table border="10" style="width:300px">
+	<caption>Example</caption>
+	<tr>
+		<td>Jill</td>
+		<td>Smith</td>
+		<td>50</td>
+	</tr>
+	<tr>
+		<td>Eve</td>
+		<td>Jackson</td>
+		<td>94</td>
+	</tr>
+</table>
+<br/>
+<table border="1" style="width:600px">
+	<tr>
+		<th></th>
+		<th colspan="2">Name</th>
+		<th>Age</th>
+	</tr>
+	<tr>
+		<th rowspan="2">7A</th>
+		<td>Peter</td>
+		<td>Chan</td>
+		<td>18</td>
+	</tr>
+	<tr>
+		<td>Fiona</td>
+		<td>Fung</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<th>7B</th>
+		<td>Leo</td>
+		<td>Cheung</td>
+		<td>20</td>
+	</tr>
+</table>
+<br/>
+<table>
+	<thead>
+		<tr>
+			<td>Month</td>
+			<td>Savings</td>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td>Sum</td>
+			<td>$180</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<td>Jan</td>
+			<td>$100</td>
+		</tr>
+		<tr>
+			<td>Feb</td>
+			<td>$80</td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<ul>
+	<li>[table]~> for table</li>
+	<li>[tr] for rows</li>
+	<li>[td] for columns</li>
+	<li>[th] for headers</li>
+	<!--By default, headings as bold and centered-->
+	<li>[caption] for table caption</li>
+	<br/>
+	<li>better to use CSS for all style</li>
+	<li>with border="", the priority will be CSS, attribute inside table</li>
+	<li>with width="", can be px or percentage</li>
+	<li>Rmb to define borders for both the table and table cells</li>
+	<li>with colspan="" for columns you want to combine</li>
+	<li>with rowspan="" for rows you want to combine</li>
+	<br/>
+	<li>[thead] groups the header content</li>
+	<li>[tbody] groups the body content</li>
+	<li>[tfoot] groups the footer content</li>
+	<li>these three have their default setting, no matter where you place them</li>
+	
+</ul>
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="LISTS">LISTS</a></h3>
+<ul>
+	<li>[ul] for unordered list</li>
+	<li>with style="list-style-type:disc/circle/square"</li>
+	<li>[ol] for ordered list</li>
+	<li>with type="A/a/I/i"</li>
+	<li>[li] for list items</li>
+	<br/>
+	<li>[dl] for description list</li>
+	<li>[dt] for terms in description list</li>
+	<li>[dd] for description of terms in description list</li>
+</ul>
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="BLOCKS">BLOCKS</a></h3>
+<ul>
+	<li>Block level elements normally start with a new line when displayed in the browser</li>
+	<li>Inline elements are normally display without starting a new line</li>
+	<li>[div] as a container for manipulate the style of block elements inside it</li>
+	<li>[span] as a container for manipulate the style of inline elements inside it</li>
+	<br/>
+	<div style="color:#4D6FA2">
+		<p style="text-indent:10px">Here is the paragraph.</p>
+		<p>Here is <span style="color:#FF4D4D">another paragraph</span></p>
+	</div>
+	<li>Even inside div, you can still use span to change the style</li>
+</ul>
+
+	<div id="container" style="width:500px">
+		<div id="header" style="background-color:#FFA500;">
+			<h1 style="margin-bottom:0;">Main Title of Web Page</h1>
+		</div>
+
+		<div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+			<b>Menu</b><br/>
+			HTML<br/>
+			CSS<br/>
+			JavaScript
+		</div>
+
+		<div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+			Content goes here
+		</div>
+
+		<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+			Copyright © W3Schools.com
+		</div>
+	</div>
+<br/>
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="FORMS_AND_INPUTS">FORMS AND INPUTS</a></h3>
+<p><b>Syntax: [form] [input type=""] OR [form] [select name=""]</b></p>
+<ul>
+	<li><b>For input type=""</b></li>
+	<li>"text" defines a one-line input field that a user can enter text into</li>
+	<li>"password"</li>
+	<li>"radio" let user select only one option</li>
+	<li>"checkbox" let user select zero or more options</li>
+	<li>"button"</li>
+	<li>follow up with name="" and value="" for variable name and identify the input</li>
+	<br/>
+	<li><b>For select name=""</b></li>
+	<li>the name is the variable name</li>
+	<li>follow up with [option value="item1"]item1[/option]</li>
+	<li>you can add [optgroup label=""] to group related items</li>
+	<br/>
+	<li><b>[textarea rows="number" cols="number"]</b></li>
+	<li>allow you to write something</li>
+	<br/>
+	<li>You can use [fieldset] to bracket as personal information</li>
+	<li>And [legend] for the title</li>
+	<br/>
+	<li><b>Attributes for forms</b></li>
+	<li>name=""</li>
+	<li>action="URL" specifies where to send the form-data wen a form is submitted</li>
+	<li>method="get/post" specifies the HTTP method to use when sending form-data</li><br/>
+	
+</ul>
+
+<form action="">
+<fieldset style="width:50%">
+<legend>Personal Information</legend>
+	Username: <input type="text" name="username"><br/>
+	Password: <input type="password" name="pwd"><br/>
+	<br/>
+	Sex:<br/>
+	<input type="radio" name="sex" value="male">Male<br/>
+	<input type="radio" name="sex" value="female">Female<br/>
+	<br/>
+	Interest:<br/>
+	<input type="checkbox" name="interest" value="phy">Physics<br/>
+	<input type="checkbox" name="interest" value="stock">Stock<br/>
+	<input type="checkbox" name="interest" value="english">English<br/>
+	<input type="checkbox" name="interest" value="programming">Programming<br/>
+	<br/>
+	Favourite Car Type:
+	<select name="car">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="fiat">Fiat</option>
+		<option value="audi">Audi</option>
+		<!--if there is an attribute selected in option tag, then the item has been pre-selected-->
+	</select><br/>
+	<br/>
+	Favourite Food:
+	<select name="food">
+		<optgroup label="Vegetables">
+			<option value="Carrot">Carrot</option>
+			<option value="Lettuce">Lettuce</option>
+			<option value="Peppers">Peppers</option>
+		</optgroup>
+		<optgroup label="Fruits">
+			<option value="Apple">Apple</option>
+			<option value="Melon">Melon</option>
+			<option value ="Mango">Mango</option>
+			<option value="Passion Fruit">Passion Fruit</option>
+		</optgroup>
+	</select></br>
+	</br>
+	What is the most important thing in your life?<br/>
+	<textarea rows="10" cols="30" placeholder="Please type here."></textarea>
+</fieldset>
+</form><br/>
+
+
+<form name="input" action="demo_form_action.asp" method="get">
+	Username: <input type="text" name="user">
+	<input type="submit" value="Submit">
+	<!--the browser will send your input to demo_from_action.asp-->
+</form>
+<br/>
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="IFRAMES">IFRAMES</a></h3>
+<p><b>Syntax: [iframe src="URL" height="" width =""][/iframe]</b></p>
+<ul>
+	<li>with frameborder="0" to remove the border</li>
+</ul>
+
+<a href="#home">Back to home</a>
+<hr/>
+
+
+<h3><a id="canvas">CANVAS</a></h3>
+
+<a href="#home">Back to home</a>
+<hr/>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

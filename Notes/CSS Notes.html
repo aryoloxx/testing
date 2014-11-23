@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CSS Notes</title>
+	<meta http-equiv="refresh" content="60" charset="UTF-8">
+	
+	
+</head>
+
+<body>
+<h1><a id="home">CSS NOTES</a></h1>
+<hr/>
+<nav>
+	<a href="#syntax">CSS SYNTAX</a> | 
+	<a href="#background">BACKGROUND</a> | 
+	<a href="#text">TEXT</a> | 
+	<a href="#font">FONT</a> | 
+	<a href="#link">LINK</a> | 
+	
+</nav>
+<hr/>
+
+
+<h3><a id="syntax">CSS SYNTAX</a></h3>
+	<p><b>Syntax: Selector {Property1:Value1; Property2:Value2;}</b>
+	<ul>
+		<li>the front part is called selector</li>
+		<ul>
+			<li>selector points to the HTML element you want to style</li>
+			<li>you can also use id attribute with #; e.g. #MyFamily</li>
+			<li>you can also use class attribute with .; e.g. p.important</li>
+		</ul>
+		<li>the later part is called declaration</li><br/>
+		<li>/*Here is the comments*/ only applicable inside the declaration</li>
+		<br/>
+		<li>you can group the selector with the same style by comma</li>
+		<br/>
+		<li><b>Insert External CSS Style Sheet</b></li>
+		<li><b>Syntax: [link rel="name_you_decide" type="text/css" href="URL"]</b></li>
+		<li>place between [head], but not between [style]</li>
+		<li>the file should not contain any html tags and saved with a .css extension</li>
+		<br/>
+		<li>if there is more than one style for the same element, then for the priority will be the followings:</li>
+		<li>inline, internal style sheet, external style sheet</li>
+		<li>if the external style sheet is placed after the internal style sheet, then it will override the later</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	</p>
+	<hr/>
+
+	
+<h3><a id="background">BACKGROUND</a></h3>
+	<ul>
+		<li><i>color, image, repeat, attachment, position</i></li><br/>
+		<li><b>background-color:</b> #485C99;</li>
+		<li><b>background-image:</b> url("name.gif");</li>
+		<li><b>background-repeat:</b> norepeat/repeat-x;</li>
+		<li><b>background-position:</b> right top;</li>
+		<li>for a shorthand, you can use background with the above order</li>
+	</ul>
+	<a href="home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="text">TEXT</a></h3>
+	<ul>
+		<li><b>color:</b> #485C99;</li>
+		<li><b>text-align:</b> center/right/justify;</li>
+		<li><b>text-decoration:</b> none/overline/underline/line-through; which is used to remove underline from the links</li>
+		<li><b>text-transform:</b> uppercase/lowercase/capitalize;</li>
+		<li><b>text-indent:</b> 50px;</li>
+		<li><b>letter-spacing:</b> 2px;</li>
+		<li><b>line-height:</b> 200%; specifies the distance between lines;</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="font">FONT</a></h3>
+	<ul>
+		<li><b>font-family: </b>Arial/"Times New Roman"; put colons if more than one word</li>
+		<li><b>font-style: </b>normal/italic</li>
+		<li><b>font-size: </b>25em; 1em is equal to the current font size</li>
+		<li><b>font-weight </b>bold;</li>
+		<li>for a shorthand, you can use font</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="link">LINK</a></h3>
+	<ul>
+		<li><b>Selector should be in the form of the followings:</b></li>
+		<li><b>a:link/visited/hover {}</b></li>
+		<li>e.g. a:link {color:#00FF00;}</li>
+		<li>e.g. a:visited {color:#00FF00;}</li>
+		<li>e.g. a:hover {color:#FFCC00;}</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+	
+	
+	
+	
+	
+</body>
+
+</html>

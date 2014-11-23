@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Notes</title>
+	<meta http-equiv="refresh" content="60">
+	<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+	<style>
+		body {/*background-color:#485C99;*/
+			font-family:"new times roma";
+			/*color:#FFFFFF;*/}
+		/*a:visited {color:#FFFFFF;}*/
+		div.back {background-color:#3C3C41;
+			color:#FFFFFF;}
+		#imgHtmlDom {vertical-align:middle;}
+	</style>
+	
+</head>
+
+<body onload="startTime()">
+<h1><a id="home">JavaScript Notes</a></h1>
+<nav>
+	<a href="#fundamental">FUNDAMENTALS</a> | 
+	<a href="#syntax">SYNTAX</a> | 
+	<a href="#object">OBJECT</a> | 
+	<a href="#string">STRING</a> | 
+	<a href="#number">NUMBER</a> | 
+	<a href="#events">EVENTS</a> | 
+	<a href="#math">MATH</a> | 
+	<a href="#dates">DATES</a> | 
+	<a href="#arrays">ARRAYS</a> | 
+	<a href="#boolean">BOOLEAN</a> | 
+	<a href="#statement">STATMENT WITHOUT LOOP</a> | 
+	<a href="#loop">LOOP</a> | 
+	<a href="#regexp">REGULAR EXPRESSIONS</a> | 
+	<a href="#hoisting">HOISTING</a> | 
+	<a href="#moreonobject">MORE ON OBJECT</a> | 
+	<a href="#function">FUNCTION</a> | 
+	<a href="#htmldom">HTML DOM</a> | 
+	<a href="#window">WINDOW</a> | 
+	<a href="#cookies">COOKIES</a> | 
+	<a href="#note">NOTE</a> | <br/>
+	<b>Reference: </b><a href="http://www.w3schools.com/js/DEFAULT.asp">w3schools.com</a>
+</nav>
+<hr/>
+
+<h3><a id="fundamental">FUNDAMENTALS</a></h3>
+	<p><b>Syntax:[script] JavaScript Code Block [/script]</b></p>
+	<ul>
+		<li>JavaScript does not have any output/print function, it can only manipulates HTML elements</li>
+		<li>script should be placed at the bottom of the body</li>
+		<li>JavaScript is written to be executed when an event occurs</li>
+		<br/>
+		<li><b>To recall external .js file</b></li>
+		<li><b>[script src="file_name.js"][/script]</b></li>
+		<li>The script will behave as if they were located exactly where you place the document</li>
+		<li>rmb there is no [script] inside the .js file</li>
+		<br/>
+		<li>after // or between /* */ are the comments</li>
+		<li>you can use comments to prevent execution</li>
+		<br/>
+		<li><b>Manipulate HTML elements</b></li>
+		<li><b>Syntax: document.getElementById("id").innerHTML = "text you want to place into it";</b></li>
+		<li>.getElementById("id") will find HTML elements using the id attribute</li>
+		<li>.innerHTML = "text" will replace the original HTML text</li>
+		<br/>
+		<li><b>Write HTML document</b></li>
+		<li><b>Syntax: document.write(text);</b></li>
+		<li>.write(text) will just write down the text</li>
+		<li>just use on testing only</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+
+
+<h3><a id="syntax">SYNTAX</a></h3>
+	<ul>
+		<li><b>For data type</b></li>
+		<li><b>Syntax: var name = number/string/array/object</b></li>
+		<li>var is used to create new variable, you can declare many variables in one statement by commas</li>
+		<li>variable names must begin with a letter and case sensitive</li>
+		<li>if you re-declare the variable, its value remains unchanged</li>
+			<ul>
+			<li><b>Array: </b>squared brackets, array indexes are zero-based</li>
+			<li>e.g. var cars = ["Saab","Volvo","BMW"];</li>
+			<br/>
+			<li>variables can be empty by setting the value to <b>null</b>, var person = null;</li>
+			<li>typeof(variableName) can check the type of the variable</li>
+			<br/>
+			<li><b>Local Variables: </b>are declared within the JavaScript function</li>
+			<li>can only accessed from within that function</li>
+			<li><b>Global Variables: </b>are declared outside the function</li>
+			<li>all scripts and functions on the web page can access it.</li>
+			<li>if you assign value to an undeclared variable, then it will be automatically declared as a global variable</li>
+			<br/>
+			</ul>
+			
+		<li><b>For function</b></li>
+		<li><b>Syntax: function function_name(parameter1, parameter2){program progress}</b></li>
+		<li>in the function definition, identifiers are called parameters</li>
+		<li>in invoking the function, values received by the function are called arguments</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+
+	
+<h3><a id="object">ObJECT</a></h3>
+	<ul>
+		<li><b>Object: </b>curly brackets, the following object(person) has 4 properties: firstName, lastName, age, eyeColor</li>
+		<li>e.g. var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};</li>
+		<br/>
+		<li><b>Properties</b> are <b>values</b> associated with objects; e.g. car.model, car.weight</li>
+		<li><b>Methods</b> are <b>actions</b> objects can perform; e.g. car.drive(), car.brake()</li>
+		<li>In object oriented language, properties and methods are object members</li>
+		<br/>
+		<li>any variable declared with keyword "new" is declared as an object</li>
+		<li>var x = new Number;</li>
+		<br/>
+		<li><b>To access the object members</b></li>
+		<li><b>Syntax: objectName.objectMemberName OR objectName.methodName()</b></li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="string">STRING</a></h3>
+	<ul>
+		<li><b>String: </b>rmb to put double/single quotes around the string</li>
+		<li>e.g. var lastname = "Johnson", carname = "Audi's TT Roadster";</li>
+		<br/>
+		<li>you can use quotes inside the string as long as they don't match the quotes surrounding</li>
+		<li>you can access each character in string by string[number]</li>
+		<li><b>.length </b>help you to find the length of string, e.g.string.length</li>
+		<br/>
+		
+		<li><b>Find position of text in string</b><br/>
+			<b>.indexOf("textLookFor") </b>find the position of the 1st occurrence of sth inside the string, starting with 0 and spaces will be counted<br/>
+			<b>.lastIndexOf("textLookFor") </b>find the position of the last occurrence<br/>
+			<b>.search("textLookFor") </b>similar to indexOf()
+	
+		<div class="back">
+			<p id="p1">Please locate where fun occurs.</p>
+			<button onclick = "findFun()">Find Fun</button>
+			<p id="demo2"></p>
+		</div>
+		
+		<script>
+			function findFun(){
+				var str = document.getElementById("p1").innerHTML;
+				var pos = str.indexOf("fun");
+				document.getElementById("demo2").innerHTML = pos;
+			}
+		</script>
+		
+		</li>
+		
+		<li><b>Replace content</b><br/>
+			<b>.replace("textBeReplaced","textWriteIn")</b>replace text within the string
+		
+		<div class="back">
+			<p id="demo3">From Win to Loss</p>
+			<button onclick="fromLossToWin()">Change It!!</button>
+			<p></p>
+		</div>
+		
+		<script>
+		function fromLossToWin(){
+			var str = document.getElementById("demo3").innerHTML;
+			var n = str.replace("Win","win");
+			n = n.replace("Loss","Win");
+			n = n.replace("win","Loss");
+			document.getElementById("demo3").innerHTML = n;
+		}
+		</script>
+		
+		</li>
+		
+		<li><b>Change the case</b><br/>
+			<b>.toUpperCase(), .toLowerCase()</b>
+		
+		<div class="back">
+			<p id="demo4">it is wonderful!!</p>
+			<button onclick="toUpCase()">Passion</button>			
+			<p></p>
+		</div>
+		
+		<script>
+			function toUpCase(){
+				var str = document.getElementById("demo4").innerHTML;
+				document.getElementById("demo4").innerHTML = str.toUpperCase();
+			}
+		</script>
+		
+		</li>
+		
+		<li><b>Convert a String to an Array</b><br/>
+			<b>.split("symbolUsedToSeparate") </b>to separate into array elements<br/>
+		
+		<div class="back">
+			<p id="demo5">a,b,c,d,e</p>
+			<p> The above will remains d, as I only recall arr[3]</p>
+			<button onclick="fromStrToArr()">From String To Array</button>
+			<p></p>
+		</div>
+		
+		<script>
+			function fromStrToArr(){
+				var str = document.getElementById("demo5").innerHTML;
+				var arr = str.split(",");
+				document.getElementById("demo5").innerHTML = arr[3];
+			}
+		</script>
+		
+		</li>
+		
+		<li>even both have the same text, they may not be equal bcoz of the data type</li>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="number">NUMBER</a></h3>
+	<ul>
+		<li>floating point arithmetic is not always 100% accurate</li>
+		<li>JavaScript interprets number as hexadecimal if they are preceded by 0x</li>
+		<li><b>.toString(base) </b>will give you the number in that base</li>
+		<br/>
+		
+		<li><b>Infinity </b>is a number and will appear if outside the range<br/>
+			divide by 0 also gives you Infinity
+		
+		<div class="back">
+			<p>The following will increase to infinity</p>
+			<button onclick="toInfinity()">Increase to Infinity</button>
+			<p id="demo6"></p>
+		</div>
+		
+		<script>
+			function toInfinity(){
+				var myNumber = 2;
+				var txt = "";
+				while (myNumber != Infinity){
+					myNumber = myNumber * myNumber;
+					txt = txt + myNumber + "<br/>";
+					//you can include br/ tag in the string
+				}
+				document.getElementById("demo6").innerHTML = txt;
+			}
+		</script>
+		
+		</li>
+		
+		<li><b>isNaN() </b>to find out if the value is a number
+		
+		<div class="back">
+			<p>A number divided by a string is not a number</p>
+			<p>A number divided by a numeric string is a number</p>
+			<button onclick="isItNumber()">Is it number?</button>
+			<p id="demo7">1000/"apple"</p>
+			<p id="demo8">1000/"10"</p>
+		</div>
+		
+		<script>
+			function isItNumber(){
+				var x = 1000/"apple";
+				var y = 1000/"10";
+				document.getElementById("demo7").innerHTML = document.getElementById("demo7").innerHTML +" = " + x;
+				document.getElementById("demo8").innerHTML = document.getElementById("demo8").innerHTML +" = " + y;
+			}
+		</script>
+		
+		</li>
+		
+		<li>Normally, primitive values (like 3.14) cannot have properties and methods (because they are not objects)<br/>
+			However, JavaScript treats primitive values as objects when using properties and methods</li>
+		<br/>
+		
+		<li><b>Operators</b></li>
+		<li>The priority of assign(=) is over increment(++/--)
+		
+		<div class="back">
+			<p>x = 5</p>
+			<p id="demo9">y = x++</p>
+			<p id="demo10">y = ++x</p>
+			<button onclick="priority()">The respective x and y are:</button>
+			<p></p>
+		</div>
+		
+		<script>
+			function priority() {
+				var x = 5;
+				var y;
+				y = x++;
+				document.getElementById("demo9").innerHTML = document.getElementById("demo9").innerHTML + " ; x = " + x + " , y = " + y;
+				x = 5;
+				y = 0;
+				y = ++x;
+				document.getElementById("demo10").innerHTML = document.getElementById("demo10").innerHTML + " ; x = " + x + " , y = " + y;
+			}
+		</script>
+		
+		<li>x += y stands for x = x + y</li>
+		<li>x -= y stands for x = x - y</li>
+		<li>x *= y stands for x = x * y</li>
+		<li>x /= y stands for x = x / y</li>
+		
+		
+		</li>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="events">EVENTS</a></h3>
+	<p><b>Syntax: [some_HTML_element some_event = "some JavaScript/function"]</b></p>
+	<ul>
+		<li>the element may be button</li>
+		<li>the event may be onclick</li>
+		<li>this.innerHTML will refer to the current element</li>
+		<br/>
+		<li>other events like onmouseover, onload	</li>
+	<br/>
+	
+	<ul>
+		<li>e.g. Click the button to display the date.
+		<div class="back">
+			<button onclick="this.innerHTML = Date()">The time is</button>
+			<button onclick="displayDate()">The time is</button>
+			<p id="demo1"></p>
+		</div>
+		
+		<script>
+			function displayDate(){
+				document.getElementById("demo1").innerHTML = Date();
+			}
+		</script>
+		</li>
+		
+		<li>e.g. Change to upper case when you leave the input field
+		<div class="back">
+			<i><p>var x = document.getElementById("myName");<br/>
+			x.value = x.value.toUpperCase();</p></i>
+			Name:<input type="text" id="myName" onchange="leaveThenToUpperCase()"></input>
+		</div>
+		<script>
+			function leaveThenToUpperCase(){
+				var x = document.getElementById("myName");
+				x.value = x.value.toUpperCase();
+			}
+		</script>
+		</li><br/>
+		
+		<li>e.g. Mouse over event, <i>onmouseover="function" onmouseout="function"</i>
+		
+		<div class="back">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)"
+			style="background-color:red; width:120px; height:20px; padding:20px;"> <!--here this refer to the div-->
+			Mouse over me
+			</div>
+		</div>
+		<script>
+			function mOver(obj){
+				obj.innerHTML = "Thanks";
+				obj.style.backgroundColor = "#3C3C41";
+				obj.style.color = "white";
+			}
+			function mOut(obj){
+				obj.innerHTML = "Mouse over me"
+				obj.style.backgroundColor = "red";
+				obj.style.color = "black";
+			}
+		</script>
+		</li><br/>
+		
+		<li>e.g. Onclick
+		<div class="back">
+			<p>!!why the program does not work</p>
+			<div onclick="clickMeEvent(this)"
+			style="background-color:red; width:120px; height:20px; padding:20px;">Click Me
+			</div>
+		</div>
+		<script>
+			function clickMeEvent(obj){
+				if (obj.innerHTML == "Click Me"){
+					obj.innerHTML = obj.innerHTML + "<br/>" + "Click Me Again!";
+				} else if (obj.innerHTML == "Click Me<br/>Click Me Again!") {
+					obj.innerHTML = obj.innerHTML + "<br/>" + "And Agian!";
+				} else if (obj.innerHTML == "Click Me<br/>Click Me Again!<br/>And Again!") {
+					obj.innerHTML = "Thank you!";
+				} else {
+					obj.innerHTML = "you are ruined";
+				}
+			}
+		</script>
+		
+		
+		
+		</li>
+		
+		
+		
+		
+	</ul>	
+	
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="math">MATH</a></h3>
+	<p><b>Syntax: Math.function(num)</b></p>
+	<ul>
+		<li>function(num) are .round(num), .random(), .max(num1,num2), .min(num1,num2), .PI, .sqrt(num)</li>
+		<li>.floor(num) will round down to the nearest integer</li>
+		<li>there Math.floor(Math.random()*10) will give random number from 1 to 9</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="dates">DATES</a></h3>
+	<p><b>Syntax: dateVariable.dateFunction()</b></p>
+	<ul>
+		<li><b>To create a Date object</b><br/>
+			<b>Syntax: var name = new Date();</b><br/>
+			<b>Syntax: name.setFullYear(2020,10,3);</b></li>
+		<br/>
+		<li><b>Date() </b>is the current date and time<br/>
+			<b>.getFullYear() </b>find the current year<br/>
+			<b>.getDay() </b>get today day of the week<br/>
+			<b>.getTime() </b>will give the milliseconds from midnight Jan 1, 1970</li>
+		<br/>
+		<li>rmb the months are being counted from 0, so 3 represents April</li>
+		<li>the time will indicate the current one</li>
+		<br/>
+		
+		<li><b>Current Time</b>
+		
+		<div class="back">
+			<div id="txt"></div>
+		</div>
+		
+		<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+				var t = setTimeout(function(){startTime()},500);
+			}
+
+			function checkTime(i) {
+				if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+				return i;
+			}
+		</script>
+		
+		</li>
+		
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="arrays">ARRAYS</a></h3>
+	<p><b>Syntax: var array-name = ["item1", "item2", ...];</b></p>
+	<ul>
+		<li>for the purpose you have a list and want to loop through it</li>
+		<li>get access the value of element by array-name[number]</li>
+		<li>rmb starting with index 0</li>
+		<li>you can have different objects, functions, arrays in one array</li>
+		<br/>
+		
+		<li><b>To join array</b><br/>
+			<b>arr1.concat(arr2,arr3)</b><br/>
+			
+			<div class="back">
+				<p> myGirls = Cecilie, Lone</p>
+				<p> myBoys = Emil, Andy, Eric</p>
+				<p> myCars = Audi, BMW</p>
+				<button onclick="Concatenate()">Concatenate</button>
+				<p id="demo11"></p>
+			</div>
+			
+			<script>
+				function Concatenate(){
+					var myGirls = ["Cecilie","Lone"];
+					var myBoys = ["Emil","Andy","Eric"];
+					var myCars = ["Audi","BMW"];
+					document.getElementById("demo11").innerHTML = myGirls.concat(myBoys,myCars);
+				}
+			</script>
+			
+		</li>
+		
+		<li><b>To Join array elements into a string</b><br/>
+			<b>arr.join(whatYouWantToPlaceBetweenThem)</b>
+		</li><br/>
+		
+		<li><b>To Remove and Add element to an array</b><br/>
+			<b>arr.pop()</b> to remove the last element<br/>
+			<b>arr.push("item1","item2")</b> to add new element followed by last element<br/>
+			<b>arr.shift(), arr.unshift()</b> start at the first element<br/>
+			<b>arr.slice(start,end)</b> to slice part of the array, include start position, but exclude end position<br/>
+			<b>arr.splice(index,howManyToRemoved,item1,item2)</b> to insert and remove certain element
+		</li><br/>
+		
+		<li><b>To Reverse the array</b><br/>
+			<b>arr.reverse()</b> reverse the order of elements inside
+		</li><br/>
+		
+		<li><b>To Convert to string</b><br/>
+			<b>arr.toString()</b>
+		</li><br/>
+		
+		<li><b>To Sort the array</b><br/>
+			<b>arr.sort()</b> sort in alphabetical order<br/>
+			<b>arr.sort(function(a,b){return a-b})</b> sort in ascending order<br/>
+			<b>arr.sort(function(a,b){return b-a})</b> sort in descending order
+		</li><br/>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="boolean">BOOLEAN</a></h3>
+	<ul>
+		<li>everything with a value is true, even "false" is true<br/>
+			but 0, "", undefined var, null, false, NaN are false<br/>
+			Suppose x = 5
+		</li>
+		
+		<li>JavaScript allows you assign a value to a variable based on certain conditions<br/>
+			<b>Syntax: variableName = (condition) ?value1:value2</b><br/>
+			Sex = (n == male) ?"Male":"Female"
+		</li>
+	
+	<table border=1>
+			<tr>
+				<th style="width:15%">Operator</th>
+				<th style="width:40%">Description</th>
+				<th style="width:18%">Comparing</th>
+				<th style="width:20%">Returns</th>
+			</tr>
+			<tr>
+				<td rowspan="2">==</td>
+				<td rowspan="2">equal to</td>
+				<td>x == 8</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>x == 5</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td rowspan="2">===</td>
+				<td rowspan="2">exactly equal to</td>
+				<td>x === "5"</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>x ===  5</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>!=</td>
+				<td>not equal</td>
+				<td>x != 8</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td rowspan="2">!==</td>
+				<td rowspan="2">not equal (different value or different type)</td>
+				<td>x !== "5"</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>x !== 5</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>&&</td>
+				<td>and</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>||</td>
+				<td>or</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>!</td>
+				<td>not</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</table><br/>
+	
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="statement">STATEMENT WITHOUT LOOP</a></h3>
+	<ul>
+		<li><b>If...Else...</b><br/>
+			<b>Syntax: if (condition1) {<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code to be executed if condition1 is true<br/>
+			} else if (condition2) {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; code to be executed if condition2 is true<br/>
+			} else { <br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code to be executed if both are 	false<br/>
+			}</b>
+		</li><br/>
+		
+		<ul>
+			<li>e.g. Greeting
+				<div class="back">
+					<i><p>var greeting;
+						var time = new Date().getHours();<br/>
+						if (time<12){<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; 	greeting = "Good Morning";<br/>
+						} else if (12<=time<18) {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; 	greeting = "Good Afternoon";<br/>
+						} else {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; 	greeting = "Good Evening";<br/>
+						}
+					</p></i>
+					<button onclick="greeting()">Good Morning or Evening?</button>
+					<p id="demo12"></p>
+				</div>
+				
+				<script>
+					function greeting(){
+						var greeting;
+						var time = new Date().getHours();
+						if (time<12){
+							greeting = "Good Morning";
+						} else if (12<=time<18) {
+							greeting = "Good Afternoon";
+						} else {
+							greeting = "Good Evening";
+						}
+						document.getElementById("demo12").innerHTML=greeting;
+					}
+				</script>
+			</li>
+			
+			<li>e.g. Happy or Sad
+				<div class="back">
+					<i><p>
+						var image=document.getElementById("");<br/>
+						if (image.src.match("happy.gif")){<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; image.src="sad.gif";<br/>
+						} else {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; image.src="happy.gif";<br/>
+						}
+					</p></i>
+					<img id="happyOrSad" onclick="changeImage()" border="0" src="happy.gif" width="100" height="100"/>
+					<p>Click the image to change it</p>
+				</div>
+				
+				<script>
+					function changeImage(){
+						var image=document.getElementById("happyOrSad");
+						if(image.src.match("happy.gif")){
+							image.src="sad.gif";
+						} else {
+							image.src="happy.gif";
+						}
+					}
+				</script>
+			</li>
+		</ul>
+		
+		<li><b>Switch</b><br/>
+			<b>Syntax: switch (expression) {<br/>
+			case n:<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code block;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; break;<br/>
+			case n:<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code block; <br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; break;<br/>
+			default:<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; default code block;<br/>
+			}</b>
+		</li><br/>
+		
+		<ul>
+			<li>e.g. what day is it
+				<div class="back">
+					<i><p>
+						switch (new Date().getDay()){<br/>
+						case 0:<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; text="Sunday";<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; break;<br/>
+						case 6:<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; text="Saturday;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; break;<br/>
+						default:<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; text="Weekday"<br/>
+						}
+					</p></i>
+					<button onclick="whatDay()">Try it</button>
+					<p id="demo13"></p>
+				</div>
+				<script>
+					function whatDay(){
+						var text;
+						switch (new Date().getDay()){
+						case 0:
+							text = "Sunday";
+							break;
+						case 6:
+							text = "Saturday";
+							break;
+						default:
+							text = "Weekday";
+						}
+						document.getElementById("demo13").innerHTML="Today is "+text;
+					}
+				</script>
+			
+			</li>
+			
+			<li>several case can the same code block and default need not to be the last one, like<br/>
+			<b>case 1:<br/>
+			case 2:<br/>
+			default:<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code block;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; break;</b></li>
+		</ul>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="loop">LOOP</a></h3>
+	<ul>
+		<li><b>For Loop</b><br/>
+			<b>Syntax: for (executed before loop; condition for the loop; executed each time) {<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code block;<br/>
+			}</b><br/>
+			rmb use semi-colon; (but not comma,) to separate the 3 items<br/>
+			you can leave the first blank or initiate more than one var in it<br/>
+			the 3rd statement can be blank and you increment i inside the loop</li><br/>
+		
+		<ul>
+			<li>e.g. List out the cars:<br/>
+				<div class="back">
+					<i><p>
+						var cars = ["BMW","Volvo","Audi","Ford"];<br/>
+						var text = "";<br/>
+						for (var i = 0; i < cars.length; i++) {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; text += cars[i] + "line break tag";<br/>
+						}
+					</p></i>
+					<button onclick="listOutCars()">List Out</button>
+					<p id="demo14"></p>
+				</div>
+				<script>
+					function listOutCars(){
+						var cars = ["BMW","Volvo","Audi","Ford"];
+						var text = "";
+						for (var i = 0; i < cars.length; i++){
+							text += cars[i] + "<br/>";
+						}
+						document.getElementById("demo14").innerHTML=text;
+					}
+				</script>
+			</li>
+			
+			<li>e.g. For loop on object<br/>
+				you can directly use the index of the object<br/>
+				<div class="back">
+					<i><p>
+						var text = "";<br/>
+						var person = {fname:"John", lname:"Doe", age:25};<br/>
+						for (var x in person) {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; text += person[x] + " ";<br/>
+						}
+					</p></i>
+					<button onclick="listPersonInf()">List Person Information</button>
+					<p id="demo15"></p>
+				</div>
+				<script>
+					function listPersonInf() {
+						var text = "";
+						var person = {fname:"John", lname:"Doe", age:25};
+						for (var x in person) {
+							text += person[x] + " ";
+						}
+						document.getElementById("demo15").innerHTML=text;
+					}
+				</script>
+			</li>
+			
+		</ul>
+		
+		<li><b>While Loop</b><br/>
+			<b>Syntax: while (condition) {<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code block;<br/>
+			}</b><br/>
+			rmb to increment, otherwise infinity loop
+		</li>
+		
+		<ul>
+			<li>e.g. Listing:<br/>
+				<div class="back">
+					<i><p>
+						var text="";<br/>
+						var i = 0;<br/>
+						while (i<10) {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; text += "The number is " + i + "line break tag";<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp; i++;<br/>
+						}
+					</p></i>
+					<button onclick="listing()">Listing</button>
+					<p id="demo16"></p>
+				</div>
+				<script>
+					function listing() {
+						var text="";
+						var i = 0;
+						while (i<10) {
+							text += "The number is " + i + "<br/>";
+							i++;
+						}
+						document.getElementById("demo16").innerHTML=text;
+					}
+				</script>
+			</li>
+		</ul>
+		
+		<li><b>Do/While Loop</b><br/>
+			<b>Syntax: do {<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; code block;<br/>
+			}<br/>
+			while (condition);</b>
+		</li><br/>
+		
+		<li><b>Break and Continue statement</b><br/>
+			<b>Syntax: break labelname; continue labelname;</b><br/>
+			break will jump out the loop immediately, (without labelname can only be used inside loop or switch)<br/>
+			continue will continues with the next iteration in the loop, (can only be used inside loop0</li>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="regexp">REGULAR EXPRESSIONS</a></h3>
+	<p><b>Syntax: /patterrn/modifiers;</b></p>
+	<ul>
+		<li>can be used to perform <b>text search</b> and <b>text replace</b> operations.</li>
+		<br/>
+		<ul>
+			<li>e.g. Search with case-insensitive
+				<div class="back">
+					<i><p>	
+						var str1 = document.getElementById("demo17").innerHTML;<br/>
+						var str2 = document.getElementById("demo18").innerHTML;<br/>
+						var pos = str1.search(/key/i);<br/>
+						document.getElementById("demo18").innerHTML = str2 + pos;<br/>
+					</p></i>
+					<button onclick="searchKeyWord()">Search for key word</button>
+					<p id="demo17">This is the Key word.</p>
+					<p id="demo18">The position of "key" is </p>
+				</div>
+				<script>
+					function searchKeyWord() {
+						var str1 = document.getElementById("demo17").innerHTML;
+						var str2 = document.getElementById("demo18").innerHTML;
+						var pos = str1.search(/key/i);
+						document.getElementById("demo18").innerHTML = str2 + pos;
+					}
+				</script>
+			</li>
+			
+			<li>e.g. Replace without case consideration
+				<div class="back">
+					<i><p>
+						var str = document.getElementById("demo19").innerHTML;<br/>
+						var replaced = str.replace(/having a world trip/i,"Be Perfect In What I Love To Do");<br/>
+						document.getElementById("demo19").innerHTML = replaced;<br/>
+					</p></i>
+					<p>Click the button to replace your target.</p>
+					<button onclick="replaceTarget()">Replace</button>
+					<p id="demo19">My target is HavInG A WoRlD Trip.</p>
+				</div>
+				<script>
+					function replaceTarget(){
+						var str = document.getElementById("demo19").innerHTML;
+						var replaced = str.replace(/having a world trip/i,"Be Perfect In What I Love To Do");
+						document.getElementById("demo19").innerHTML = replaced;
+					}
+				</script>
+			</li>
+		</ul>
+	
+	
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="hoisting">HOISTING</a></h3>
+	<ul>
+		<li>Hoisting is JavaScript default behavior to move all the variable declaration to the top of the current scope<br/>
+			but initialization will not be hoisted to the top of the scope</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="moreonobject">MORE ON OBJECT</a></h3>
+	<ul>
+		<li>Everything in JavaScript can be object, e.g. primitive data, function</li>
+		<li><b>Properties</b> are values associated with an object, <b>objectName.property</b></li>
+		<li><b>Methods</b> are actions which can be performed on object, <b>objectName.methodName</b></li>
+		<br/>
+		
+		<li>you can create object by the following syntax
+			<ul>
+				<li><b>Using Object Literal</b><br/>
+					<i>var objectName = {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;prop1:value1,<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;prop2:value2<br/>
+					};</i>
+				</li>
+				
+				<li><b>Using Keyword New</b><br/>
+					<i>	var objectName = new Object();<br/>
+					objectName.prop1 = value1;<br/>
+					objectName.prop2 = value2;</i>
+				</li>
+				
+				<li><b>Using Object Constructor</b><br/>
+					<i>function objectName(prop1, prop2){<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;this.prop1 = prop1;<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;this.prop2 = prop2;<br/>
+					}<br/>
+					var objectName1 = new objectName(value1, value2);<br/>
+					var objectName2 = new objectName(value1, value2);</i>
+				</li>
+			</ul>
+		</li>
+		<br/>
+		
+		<li><b>this</b> is the object that "owns" the current code<br/>
+			e.g. when used in a function, the value of this is the object that owns the function<br/>
+			when a function is called without an owner object, the value of <b>this</b> becomes the global object which is the browser window</li>
+		<li>for the function belonging to an object, <b>this</b> refer to the object</li>
+		<br/>
+		
+		<li><b>!!Mutable</b> objects are addressed by reference, not by value<br/>
+			e.g. if y is an object and var x = y; we say x is a pointer to y, any changes to y will also change x
+		</li>
+		
+		<ul>
+			<div class="back">
+				<p><i>var y = new person{firstName:Eric, lastName:Liu, Age:23, Sex:Male};<br/>
+					var x = y;<br/>
+					x.age = 30;</i> here y.age will also be changed to 30
+				</p>
+			</div>
+		</ul>
+		
+		<li><b>for ... in loop</b><br/>
+			<b>Syntax: for (variable in loop) {<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;code block<br/>
+			}</b>
+		</li>
+		
+		<ul>
+			<li>e.g. List out the element in object<br/>
+				<div class="back">
+					<i><p>person = {fname:"John", lname:"Doe", age:25}</p></i>
+					<button onclick="listOut()">List Out</button>
+					<p id="demo20"></p>
+				</div>
+				<script>
+					function listOut() {
+						var person = {fname:"John", lname:"Doe", age:25};
+						var txt = "";
+						for (var x in person) {
+							txt = txt + person[x] + " ";
+						}
+						document.getElementById("demo20").innerHTML = txt;
+					}
+				</script>
+			</li>
+		</ul>
+		
+		<li>Add and Remove element from the object<br/>
+			<b>Syntax: objectName.newProperty = value;</b><br/>
+			<b>Syntax: delete objectName.property;</b><br/>
+			while you delete the property, the value will be deleted at the same time</li>
+		<br/>
+		
+		<li>To use the object method<br/>
+			<b>Syntax: objectName.method();</b></li>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="function">FUNCTION</a></h3>
+	<p><b>Syntax: function functionName(parameters){<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;code to be executed;<br/>
+	}</b></p>
+	<ul>
+		<li>you can directly assign a function to a variable, in this case, the function will be anonymous<br/>
+			you can call the function by using variable name as function name</li><br/>
+		<ul>
+		<li>e.g. Assign funciton to a variable</li>
+			<div class="back">
+				<i><p>
+					var x = function(a,b) {return a*b};<br/>
+					var z = x(4,3);
+				</p></i>
+			</div>
+		</ul>
+		
+		<li>function declaration will be hoisted to the top of the scope, but definition will not</li>
+		<br/>
+		<li>a function defined as the property of an object, is called method of the object<br/>
+			a function designed to create new objects, is called an object constructor</li><br/>
+		
+		<li>if the input arguments are less than those in declaration, then the missing arguments will be set to undefined<br/>
+			if the input arguments are more than those in declaration, then the extra will be ignored</li><br/>
+		
+		<li><b>arguments object</b> is a built-in object which contains an array of the arguments used when the function was invoked</li>
+		
+		<ul>
+			<li>Find the max</li>
+			<div class="back">
+				<i><p>
+					var x = findMax(1,123,500,155,44,88);<br/>
+					var max = 0;<br/>
+					for(var i=0; i<arguments.length; i++){<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;if(arguments[i]>max) max=arguments[i];<br/>
+					}<br/>
+					return max;<br/>
+				</p></i>
+				<p id="demo21"></p>
+			</div>
+			<script>
+				var x = findMax(1,123,500,155,44,88);
+				document.getElementById("demo21").innerHTML = x;
+				
+				function findMax(){
+					var max = 0;
+					for(var i=0; i<arguments.length; i++){
+						if(arguments[i]>max) max=arguments[i];
+					}
+					return max;
+				}
+			</script>
+		</ul>
+		
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="htmldom">HTML DOM (Document Object Model)</a></h3>
+	<p>With the HTML DOM, JavaScript can access and change all the elements of an HTML document.</p>
+	<img src="html dom.gif" id="imgHtmlDom">
+	<ul>
+		<li><b>Syntax:</b><br/>
+			<i>document.getElementById(id).innerHTML = newHtml;<br/>
+			document.getElementById(id).attribute = newValue;<br/>
+			document.getElementById(id).style.property = newStyle;<br/>
+			</i></li>
+		<li>you can also use <br/>
+			<i>getElementsByTagName, getElementByClassName</i></li>
+	</ul>
+	<img src="nodeTreeDiagram.gif" id="nodeTreeDiagram">
+	<ul>
+		<li>everything in an HTML document is a node<br/>
+			the top node is called root, everything node must have one parent, except the root<br/>
+			you can get other content with the usage of childNodes[index].nodeValue<br/>
+			<i>var x = document.getElementById("demo").childNodes[0].nodeValue;</i></li>
+		<li>Reminder: <b>[title]DOM Tutorial[/title]</b>, the element title does not contain text, but contain a text node with value "DOM Tutorial"</li><br/>
+		
+		<ul>
+			<li>To create a new node of paragraph<br/>
+				<b>Syntax</b><br/>
+				<i>document.createElement("nameOfNewElementOrTagName")</i><br/>
+				<i>document.createTextNode("text")</i> will help you create text<br/>
+				if you use the previous defined tag name like h1, the style will be inherited
+			</li><br/>
+				
+			<li>To insert, remove, replace node<br/>
+				<b>Syntax:</b><br/>
+				<i>x.appendChild(y)</i> will append y as child of x at the last position<br/>
+				<i>x.insertBefore(y,z)</i> will insert y into x before z<br/>
+				<b>Syntax:</b><br/>
+				<i>x.removeChild(y)</i> will remove y from x<br/>
+				When you don't know the parentNodeName, you can use tick <b>parentNode</b><br/>
+				e.g. var child = document.getElementById("demo");<br/>
+				child.parentNode.removeChild(child);<br/>
+				<b>Syntax:</b><br/>
+				<i>para.replace(newChild,preChild)</i> will replace preChild by newChild in para
+			</li><br/>
+			
+			<li> Example to insert node
+				<div class="back" id="div1">
+					<i><p>
+						var para = document.createElement("p");<br/>
+						var node = document.createTextNode("This is the new paragraph");<br/>
+						para.appendChild(node);<br/>
+						document.getElementById("div1").appendChild(para);<br/>
+					</p></i>
+					<p>This is the original paragraph</p>
+					<button onclick="createPara()">Create another paragraph</button><br/>
+					The number of new paragraphs added will be equal to the times you click
+				</div>
+				<script>
+					function createPara(){
+						var para = document.createElement("h1");
+						var node = document.createTextNode("This is the new paragraph");
+						para.appendChild(node);
+						document.getElementById("div1").appendChild(para);
+					}
+				</script>
+			</li>
+		
+		</ul><br/>
+			
+		<li>To create a nodeList<br/>
+			e.g. <i>var pElements = document.getElementsByTagName("p");</i><br/></li>
+		
+		<li>A much better way to find the element in the page<br/>
+			<b>Syntax:</b><br/>
+			<i>document.querySelector("p")</i> will give you the first one; you can also use "body p"; # is fo id<br/>
+			<i>document.querySelectorAll("p")</i> will give you the node list; but it is not a live  node list<br/></li>
+			
+		<ul>
+			<li>Example to use querySelector and querySelectorAll
+				<div class="back">
+					<p id="demo22">This is demo22.</p>
+					<button onclick="findNumberOfTagP()">Find number of tag p</button>
+					<button onclick="findDemo22()">Find demo22 parentNode.tagName</button>
+				</div>
+				<script>
+					function findNumberOfTagP(){
+						alert(document.querySelectorAll("p").length);
+					}
+					function findDemo22(){
+						alert(document.querySelector("#demo22").parentNode.tagName);
+					}
+				</script>
+			</li>
+		</ul>
+		
+	</ul>
+	
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="window">WINDOW</a></h3>
+	<ul>
+		<li>window.open(URL)</li>
+		<li>window.close()</li>
+		<li>location.href</li>
+		<li>location.pathname</li>
+		<li>location.protocol</li>
+		<li>location.assign()</li>
+		<li>history.back()</li>
+		<li>history.forward()</li>
+		<li>navigator.cookieEnabled to check if cookie is available</li><br/>
+		
+		<li><i>alert("text")</i>; use "\n" when you want a line break in pop-up box</li>
+		<li><i>confirm("text")</i>; it will return the true or false value after you click</li>
+		<div class="back">
+			<button onclick="breakOrWork()">Try the confirm box</button>
+			<script>
+				function breakOrWork(){
+					var x = confirm("Want to have a break?\nHave a ride to google.com?");
+					if (x){
+						location.assign("http://www.google.com");
+					} else {
+						alert("Keep Fighting!");
+					}
+				}
+			</script>
+		</div>
+		
+		<br/>
+		<li></li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+<h3><a id="cookies">COOKIES</a></h3>
+	<ul>
+		<li>Cookies let your computer store your access information of web site</li>
+		<li>When the web server has sent a web site to a browser, the connection is shut down, and the server forgets everything about the user</li>
+		<li>When a browser request a web page from a server, cookies belonging to the page is added to the request.</li>
+	</ul>	
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+	
+	
+	
+<h3><a id="note">NOTE</a></h3>
+	<ul>
+		<li>if there are two same id paragraph, your program will change the first one instead of the later</li>
+		<li><b>parseInt(String, base) and parseFloat(String, base) will return number</b></li>
+		<li>number and string e.g.<br/>
+			var x = 3 - 5 * (2-6); //give you 23, bcoz (2-6)=-4, then -5*-4=20, then +3+20=23
+			var x = 6 + "7"; //give you "67"<br/>
+			var x = 4 + 5 + "7"; //give you "97", bcoz from left to right<br/>
+			var x = 4 + 5 + "7" + 6 + 5; //give you "9765"
+		</li>
+		<li>you cannot access the variable inside the nested function<br/>
+			you can look out from the {} to outside, but not inside</li>
+		<li>any variable defined without <b>var</b> is always global variable</li>
+	</ul>
+	<a href="#home">Back to Home</a>
+	<hr/>
+	
+</body>
+</html>

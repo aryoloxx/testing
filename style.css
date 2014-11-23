@@ -1,0 +1,20 @@
+﻿#container {
+	background:#344A5F;
+	width:950px;
+	margin:0 auto;
+}
+
+#headers {
+	background:#2A94D6;
+	height:100px;
+	overflow:hidden;
+	font-family:Georgia;
+}
+
+#contents div{
+	display:none;
+}
+
+#contents div .active {
+	display:show;
+}
